@@ -1,0 +1,174 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.itemlist {
+    background-color: v.$blanco;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        min-height: 100% ;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // gap: 2rem;
+        @include m.tablet {
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        text-align: center;
+        color: v.$secundario;
+    }
+    }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 15rem;
+    margin: 1rem auto 0rem auto;
+    border-radius: .2rem;
+    box-shadow: 0 2px 7px #dfdfdf;
+
+    &:last-child {
+        margin: 1rem auto 1rem auto;
+        @include m.tablet {
+            margin: 1rem auto 0rem auto;
+        }
+    }
+    @include m.tablet {
+        margin: 1rem auto 1rem auto;
+        
+    }
+
+    &__img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            border-radius: 50%;
+            width: 10rem;
+            height: 10rem;
+            object-fit: cover;
+        }
+    }
+
+    &__contain {
+        background-color: #fafafa;
+        width: 100%;
+        padding: 1rem;
+        // margin-top: 1rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__title {
+        color: v.$grisClaro;
+        text-transform: uppercase;
+        text-align: start;
+        font-size: 1rem;
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: space-around;
+        
+        span {
+            font-size: .8rem;
+            font-style: italic;
+        }
+    }
+
+    &__description {
+        margin: 1rem 0 0 0;
+        color: v.$grisClaro;
+        text-align: justify;
+        font-style: italic;
+    }
+
+    &__icons {
+        margin: 1rem 0 0 0;
+        display: flex;
+        width: fit-content;
+        justify-content: end;
+        position: absolute;
+        right: 1rem;
+        top: -2rem;
+        
+        
+        svg {
+            background-color: #fafafa;
+            width: 1.8rem;    
+            height: 1.8rem;
+            fill: v.$grisClaro;
+            padding: .2rem;
+            border: solid 2px v.$grisClaro;
+            border-radius: 50%;
+            &:hover {
+                border-color: v.$primario;
+                // background-color: v.$secundario;
+                fill: v.$primario;
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+    &__precios {
+        margin: 1rem 0 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        h3 {
+            color: v.$grisClaro;
+        }
+    }
+
+    &__cantidad {
+        width: 5rem;
+        height: 1.5rem;
+        border: solid 1px v.$secundario;
+        box-shadow: 0 2px 7px #dfdfdf;
+        border-radius: .2rem;
+        background-color: v.$secundario;
+        color: v.$blanco;
+        text-align: center;
+    }
+
+    &__button {
+        background-color: v.$secundario;
+        padding: .5rem .8rem;
+        border-radius: 1rem ;
+        border: none;
+        color: v.$blanco;
+        text-align: center;
+        width: 60%;
+        margin: auto;
+        &:hover {
+            cursor: pointer;
+            background-color: v.$grisClaro;
+            color: v.$primario;
+            transition: all .2s ;
+        }
+
+        &.added {
+            background-color: v.$terciario;
+            transition: all .2s ease-in-out
+        }
+    }
+}

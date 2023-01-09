@@ -1,0 +1,97 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+.footer {
+    background-color: v.$primario;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    bottom: 0px;
+    @include m.tablet {
+        height: 5rem;
+        bottom: 0px;
+    }
+
+    &__container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1rem 0;
+        align-content: center;
+        align-items: center;
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+            
+    }
+    &__redes {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+        @include m.tablet {
+            width: 30%;
+            margin: auto;
+            align-items: center;
+            padding: inherit;
+        }
+        a svg {
+            width: 2rem;
+            height: 2rem;
+            text-decoration: none;
+            color: v.$blanco;
+            &:hover {
+                fill: v.$grisClaro;
+                transition: all .2s ease-in-out;
+            }
+            @include m.tablet {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+        @include m.tablet {
+            flex-direction: row;
+            padding: inherit;
+            width: 50%;
+        }
+    }
+    &__a {
+        margin-top: 1rem;
+        text-align: center;
+        text-decoration: none;
+        color: v.$blanco;
+        font-weight: 400;
+        font-size: 1.2rem;
+        &:hover {
+            color: v.$grisClaro;
+            transition: all .2s ease-in-out;
+        }
+        @include m.tablet {
+            font-size: .8rem;
+            padding: 0.2rem 0.5rem;
+            margin-top: inherit;
+        }
+    }   
+    &__copyright {
+        display: flex;
+        color: v.$blanco;
+        font-weight: 700;
+        padding-top: 1rem;
+        @include m.tablet {
+            padding-top:initial;
+        }
+    }
+}
+
+

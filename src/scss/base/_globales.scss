@@ -1,0 +1,23 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$fuente_principal;
+    font-size: .8rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
