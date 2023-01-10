@@ -26,9 +26,8 @@ display: flex;
     box-shadow: 0 2px 7px #dfdfdf;
    
     @include m.tablet {
-        .detail {
-            flex-direction: column;
-        }
+      flex-direction: row;
+        
     }
     
   &__img img {
@@ -42,6 +41,7 @@ display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
+    margin: auto 2rem;
 
   }
   &__text {
