@@ -1,0 +1,65 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.itemdetailcontainer {
+    
+display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  &__container {
+    display: flex;
+   
+  }
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 100%;
+    min-height: 70vh;
+    margin: 1rem auto 1rem auto;
+    border-radius: .2rem;
+    box-shadow: 0 2px 7px #dfdfdf;
+   
+    @include m.tablet {
+        .detail {
+            flex-direction: column;
+        }
+    }
+    
+  &__img img {
+        object-fit: contain;
+        max-width: 20rem;
+        max-height: 20rem;
+
+  }
+  &__contain {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    color: v.$secundario;
+    
+  }
+  &__recipe {
+    color: v.$grisClaro;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-style: italic;
+  }
+}

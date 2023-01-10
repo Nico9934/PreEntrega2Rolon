@@ -1,0 +1,68 @@
+
+[
+        {
+            "name": "Acelga",
+            "price": 1050,
+            "description": "Espinaca en hojas cortadas",
+            "id": 1,
+            "kg": 1,
+            "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/419/553/products/espinaca-hojas1-67cd654e3bcec19f9715809309929568-1024-1024.jpg"
+        },
+        {
+            "name": "Batata",
+            "price": 950,
+            "description": "Batata en cubos cortadas",
+            "id": 2,
+            "kg": 1,
+            "img": "http://congeladosescobar.lookstyle.com.ar/wp-content/uploads/2020/07/batataencubos.jpeg"
+        },
+        {
+            "name": "Brocoli",
+            "price": 1200,
+            "description": "Arbolitos de brocoli",
+            "id": 3,
+            "kg": 1,
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuDlajGKmNBQ1sRoeIT5OuJvw5ik36s1mWFVkchtq7--VhYQCpJOgdp0sJmsnp5HUoQy0&usqp=CAU"
+        },
+        {
+            "name": "Higo",
+            "price": 780,
+            "description": "Higo cortado",
+            "id": 4,
+            "kg": 0.5,
+            "img": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/021/255/products/higo-biomac1-6070dc54cd3fa78d4216655033220214-640-0.webp"
+        },
+        {
+            "name": "Arandanos",
+            "price": 780,
+            "description": "Arandanos enteros",
+            "id": 5,
+            "kg": 1,
+            "img": "https://biomac.com.ar/wp-content/uploads/2020/04/Ara%CC%81ndanos.jpg"
+        },
+        {
+            "name": "Pera",
+            "price": 850,
+            "description": "Pera cortada en cubos",
+            "id": 6,
+            "kg": 0.5,
+            "img": "https://biomac.com.ar/wp-content/uploads/2022/07/Peras_ecommerce-DIC-1.jpg"
+        },
+        {
+            "name": "Moras",
+            "price": 1870,
+            "description": "Moras entereas",
+            "id": 7,
+            "kg": 1,
+            "img": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/215/798/products/moras-21-a4fca6ad4257abad1216442823226810-640-0.jpg"
+        },
+        {
+            "name": "Frambuesas",
+            "price": 3150,
+            "description": "Frambuesas entereas",
+            "id": 8,
+            "kg": 1,
+            "img": "http://d3ugyf2ht6aenh.cloudfront.net/stores/001/215/798/products/frambuesas1-530dab6b9228be213116442759719496-640-0.jpeg"
+        }
+        
+    ]
