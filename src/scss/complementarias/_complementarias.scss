@@ -1,0 +1,55 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+.about {
+    display: flex;
+    &__container{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet {
+            flex-direction: row;
+            gap: 3rem;
+            
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet {
+            justify-content: space-between;
+            width: 50%;
+        }
+    }
+    &__description{
+        line-height: 2;
+        color: v.$grisClaro;
+        font-style: italic;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        color: v.$primario;
+        font-weight: 900;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    &__img{
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 1.5rem auto;
+
+        @include m.tablet {
+            height: 15rem;
+            width: 15rem;
+            margin: auto;
+        }
+    }
+}

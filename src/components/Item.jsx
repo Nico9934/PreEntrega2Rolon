@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 const Item = ({ producto }) => {
   const { name, description, price, id, kg, img, cantidad } = producto;
 
@@ -18,12 +21,8 @@ const Item = ({ producto }) => {
           <h3>${price}</h3>
         </div>
 
-        <button
-          className={"card__button"}
-          // onClick={() => agregarProducto(product)}
-        >
-          Agregar producto
-        </button>
+        <Link className="card__button" to={`/item/${id}`}>Ver mas</Link>
+        {/* <a href={`/productos/${id}`}}>Ver más </a> */}
       </div>
     </div>
   );

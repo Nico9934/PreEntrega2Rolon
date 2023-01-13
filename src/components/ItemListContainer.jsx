@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ItemList } from "./ItemList";
 import Spinner from "./Spinner";
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+
   const [load, setLoad] = useState(false);
   const [productos, setProductos] = useState([]);
+
+  const propVariables = useParams()
+  console.log(propVariables)
 
   useEffect(() => {
     const url = "../public/data.json";
 
 
-    setTimeout(() => {
+    // setTimeout(() => {
   
       fetch(url)
-      .then((respuesta) => respuesta.json())
-      .then((resultado) => setProductos(resultado))
-      .catch((error) => console.log(error));
+        .then((respuesta) => respuesta.json())
+        .then((resultado) => setProductos(resultado))
+        .catch((error) => console.log(error));
       setLoad(true)
 
-    }, 2000);
+    // }, 1250);
   
   
   }, []);

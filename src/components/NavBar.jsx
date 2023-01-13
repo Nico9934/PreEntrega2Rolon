@@ -1,25 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
 const NavBar = () => {
   return (
     <header className='header'>
       <div className='header__container container'>
-        <div className='header__logo'>
+       
+       <Link className='header__logo' to={"/"}>
             <h1>Bienfrio</h1>
             <p>Natural Food</p>
-          </div>
+       </Link>
         <div className='header__search'>
           <input placeholder='Busca un producto' type="text" />
         </div>
         <nav className='header__nav'>
-            <ul className='header__ul'>
-                <li className='header__li'><a href="#verduras">Verduras</a> </li>
-                <li className='header__li'><a href="#frutas">Frutas</a> </li>
-                <li className='header__li'><a href="#about">¿Quienes somos?</a>  </li>
-                <li className='header__li'><a href="#iqf">¿Qué es el IQF?</a></li>
-                <li className='header__li'><a href="#contact">Contacto</a> </li>
-            </ul>
+            <div className="header__ul">
+
+                <Link className='header__li' to={"/productos/verduras "}>Verduras </Link>
+                <Link className='header__li' to={"/productos/frutas "}>Frutas</Link>
+                <Link className='header__li' to={"/about "}>¿Quienes somos?  </Link>
+                <Link className='header__li' to={"/iqf "}>¿Qué es el IQF?</Link>
+                <Link className='header__li' to={"/contact "}>Contacto</Link>
+            </div>
         </nav>
 
         <CartWidget/>
