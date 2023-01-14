@@ -18,8 +18,6 @@ const Main = () => {
             <Route path='/about' element={<About/>} />
             <Route path='/iqf' element={<About/>} />
             <Route path='/contact' element={<About/>} />
-            {/* <ItemListContainer></ItemListContainer> */}
-            {/* <ItemDetailContainer></ItemDetailContainer> */}
         </Routes>
 
 

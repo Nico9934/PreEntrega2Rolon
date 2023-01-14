@@ -12,20 +12,24 @@
         justify-content: center;
         align-items: center;
         margin: auto;
-        min-height: 100% ;
         flex-direction: column;
         flex-wrap: wrap;
-        // gap: 2rem;
         @include m.tablet {
             flex-direction: row;
-            gap: 2rem;
+            gap: 5px;
         }
     }
 
     &__title {
         font-size: 1.8rem;
+        text-transform: uppercase;
         text-align: center;
-        color: v.$secundario;
+        color: v.$primario;
+        margin: 1rem 0 0 0;
+        @include m.tablet {
+            font-size: 3rem;
+            margin: 2.5rem 0 0 0;
+        }
     }
     }
 
@@ -42,7 +46,7 @@
     &:last-child {
         margin: 1rem auto 1rem auto;
         @include m.tablet {
-            margin: 1rem auto 0rem auto;
+            margin: 1rem auto 1rem auto;
         }
     }
     @include m.tablet {
@@ -171,5 +175,24 @@
             background-color: v.$terciario;
             transition: all .2s ease-in-out
         }
+    }
+
+    &__stock {
+        background-color: v.$terciario;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        color: v.$blanco;
+        font-weight: 900;
+        font-size: .8rem;
+        position: absolute;
+        top: -30px;
+        left: -40px;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
     }
 }

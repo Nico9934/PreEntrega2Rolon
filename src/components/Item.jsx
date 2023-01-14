@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 
 const Item = ({ producto }) => {
-  const { name, description, price, id, kg, img, cantidad } = producto;
+  
+  const { name, description, price, id, kg, img, stock } = producto;
+  console.log(stock)
 
   return (
     <div className="card">
@@ -11,6 +13,10 @@ const Item = ({ producto }) => {
       </div>
 
       <div className="card__contain">
+        
+          {stock === 0 ?
+            <div className="card__stock">Sin stock</div>
+          : '' }
         <div className="card__text">
           <h3 className="card__title">
             {name} <span>{kg}kg</span>{" "}
@@ -22,7 +28,6 @@ const Item = ({ producto }) => {
         </div>
 
         <Link className="card__button" to={`/item/${id}`}>Ver mas</Link>
-        {/* <a href={`/productos/${id}`}}>Ver más </a> */}
       </div>
     </div>
   );

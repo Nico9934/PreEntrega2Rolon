@@ -3,11 +3,11 @@
 
 .itemdetailcontainer {
     
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-
+  padding: 1rem;
   &__container {
     display: flex;
    
@@ -27,15 +27,28 @@ display: flex;
    
     @include m.tablet {
       flex-direction: row;
+      height: 100%;
+      padding: 0  1rem 0 1rem;
         
     }
     
-  &__img img {
-        object-fit: contain;
-        max-width: 20rem;
-        max-height: 20rem;
-
+  &__img {
+    height: 50%;
+    img {
+      display: inline-block;
+      object-fit: cover;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      object-fit: contain;
+      
+      @include m.tablet {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
   }
+
   &__contain {
     display: flex;
     justify-content: center;
@@ -50,16 +63,48 @@ display: flex;
     align-items: center;
   }
   &__title {
-    margin: 0 0 2rem 0;
+    margin: 1rem 0;
     font-size: 2rem;
     color: v.$secundario;
     
   }
-  &__recipe {
+  &__description {
     color: v.$grisClaro;
     text-align: justify;
     line-height: 1.5;
     font-size: 1rem;
+    font-style: italic;
+  }
+}
+
+.recipe  {  
+    display: flex;
+    flex-direction: column;
+    color: v.$secundario;
+    display: flex;
+  &__title {
+    color: v.$terciario;
+    font-style: italic;
+    
+    font-size: 1.5rem;
+    text-align: end;
+    @include m.tablet {
+      font-size: 2.2rem;
+    }
+  }
+  &__ingredient {
+    font-style: italic;
+    text-align: end;
+    font-size: .9rem;
+    margin-bottom: .2rem;
+    color: v.$terciario;
+    list-style: none;
+    margin-left: 1.5rem;
+  }
+  &__steps {
+    color: v.$grisClaro;
+    font-size: 1rem;
+    line-height: 1.5;
     font-style: italic;
   }
 }

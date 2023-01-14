@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Main />
+        <Main />
       <Footer />
     </BrowserRouter>
   );

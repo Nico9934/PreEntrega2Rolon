@@ -8,35 +8,33 @@ const ItemListContainer = () => {
 
   const [load, setLoad] = useState(false);
   const [productos, setProductos] = useState([]);
-  const [filtro, setFiltro] = useState([])
+  
+  const {categoria} = useParams()
 
-  const propVariables = useParams()
 
   useEffect(() => {
+    setLoad(false)
     const url = "../public/data.json";
  
+    
       fetch(url)
-        .then((respuesta) => respuesta.json())
-        .then((resultado) => {
-            if (propVariables.categoria === undefined) {
-              setProductos(resultado)
-              return
-            } else {
-              setFiltro(resultado.filter( producto => producto.categoria == propVariables.categoria))
-              setProductos(filtro)
-            }
-        })
-        .catch((error) => console.log(error));
+      .then((respuesta) => respuesta.json())
+      .then( (resultado) => categoria === undefined ? setProductos(resultado) : setProductos(resultado.filter( producto => producto.categoria === categoria)))
+      .catch((error) => console.log(error));
+
+      setTimeout(() => {
         setLoad(true)
-  
-  }, [propVariables]);
+      }, 150);
+
+  }, [categoria]);
 
   return (
     <>
+      
       {load ? (
-         <ItemList productos={productos}/>
+         <ItemList productos={productos} categoria={categoria} />
       ) : (
-        <section className="itemlist" id="vegetales">
+        <section className="itemlist">
           <div className="container">
             <div className="itemlist__container">
               <Spinner />
