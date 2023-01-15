@@ -14,10 +14,12 @@ const ItemDetailContainer = () => {
     const url = "https://raw.githubusercontent.com/Nico9934/PreEntrega2Rolon/master/public/data.json";
     
         setCargando(false)
-    fetch(url)
-        .then((respuesta) => respuesta.json())
-        .then((resultado) => setProducto(resultado.find((seleccionado) => seleccionado.id === numId)))
-        .catch((error) => console.log(error));
+          
+        fetch(url)
+              .then((respuesta) => respuesta.json())
+              .then((resultado) => setProducto(resultado.find((seleccionado) => seleccionado.id === numId)))
+              .catch((error) => console.log(error));
+
         setCargando(true)
     }, [numId]);
 

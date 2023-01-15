@@ -22,8 +22,7 @@ const ItemListContainer = () => {
       .then( (resultado) => categoria === undefined ? setProductos(resultado) : setProductos(resultado.filter( producto => producto.categoria === categoria)))
       .catch((error) => console.log(error));
 
-        setLoad(true)
-
+      setLoad(true)
   }, [categoria]);
 
   return (
