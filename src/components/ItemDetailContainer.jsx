@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   const numId = Number(id)
 
   useEffect(() => {
-    const url = "../public/data.json";
+    const url = "https://raw.githubusercontent.com/Nico9934/PreEntrega2Rolon/master/public/data.json";
     
         setCargando(false)
     fetch(url)

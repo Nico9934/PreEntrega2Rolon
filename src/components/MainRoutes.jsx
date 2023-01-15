@@ -6,15 +6,22 @@ import ItemListContainer from './ItemListContainer'
 
 
 
-const Main = () => {
+const MainRoutes = () => {
   return (
     <main>
-
         <Routes>
-
+            {/* Bien */}
             <Route path='/' element={<ItemListContainer />} />
-            <Route path='/productos/:categoria' element={<ItemListContainer/>} />
+            
+            {/* deberia ser 
+              <Route path='/category/:id' element={<ItemListContainer/>} /> 
+            */}
+              <Route path='/productos/:categoria' element={<ItemListContainer/>} />
+            
+            {/* Bien */}
             <Route path='/item/:id' element={<ItemDetailContainer/>} />
+
+            {/* Rutas agregadas */}
             <Route path='/about' element={<About/>} />
             <Route path='/iqf' element={<About/>} />
             <Route path='/contact' element={<About/>} />
@@ -25,4 +32,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default MainRoutes

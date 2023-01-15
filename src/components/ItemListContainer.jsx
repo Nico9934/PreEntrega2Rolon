@@ -14,7 +14,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoad(false)
-    const url = "../public/data.json";
+    const url = "https://raw.githubusercontent.com/Nico9934/PreEntrega2Rolon/master/public/data.json"
  
     
       fetch(url)
@@ -22,9 +22,7 @@ const ItemListContainer = () => {
       .then( (resultado) => categoria === undefined ? setProductos(resultado) : setProductos(resultado.filter( producto => producto.categoria === categoria)))
       .catch((error) => console.log(error));
 
-      setTimeout(() => {
         setLoad(true)
-      }, 150);
 
   }, [categoria]);
 

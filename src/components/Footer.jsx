@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -12,11 +13,13 @@ const Footer = () => {
           </div>
 
           <nav className='footer__nav'>
-                <a className='footer__a' href="#verduras">Verduras</a>
-                <a className='footer__a' href="#frutas">Frutas</a>
-                <a className='footer__a' href="#about">¿Quienes somos?</a> 
-                <a className='footer__a' href="#iqf">¿Qué es el IQF?</a>
-                <a className='footer__a' href="#contact">Contacto</a>
+                <Link className='footer__a' to={"/productos/verduras"}>Verduras</Link>
+                <Link className='footer__a' to={"productos/frutas"}>Frutas</Link>
+                <Link className='footer__a' to={"productos/helados"}>Helados</Link>
+                <Link className='footer__a' to={"productos/almacen"}>Almacen</Link>
+                <Link className='footer__a' to={"/about"}>¿Quienes somos?</Link> 
+                <Link className='footer__a' to={"/iqf"}>¿Qué es el IQF?</Link>
+                <Link className='footer__a' to={"/contact"}>Contacto</Link>
         </nav>
 
           <p className='footer__copyright'>
