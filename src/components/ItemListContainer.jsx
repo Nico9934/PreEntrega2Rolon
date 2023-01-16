@@ -9,8 +9,7 @@ const ItemListContainer = () => {
   const [load, setLoad] = useState(false);
   const [productos, setProductos] = useState([]);
   
-  const {categoria} = useParams()
-
+  const {categoryId} = useParams()
 
   useEffect(() => {
     setLoad(false)
@@ -19,17 +18,17 @@ const ItemListContainer = () => {
     
       fetch(url)
       .then((respuesta) => respuesta.json())
-      .then( (resultado) => categoria === undefined ? setProductos(resultado) : setProductos(resultado.filter( producto => producto.categoria === categoria)))
+      .then( (resultado) => categoryId === undefined ? setProductos(resultado) : setProductos(resultado.filter( producto => producto.categoria === categoryId)))
       .catch((error) => console.log(error));
 
       setLoad(true)
-  }, [categoria]);
+  }, [categoryId]);
 
   return (
     <>
       
       {load ? (
-         <ItemList productos={productos} categoria={categoria} />
+         <ItemList productos={productos} categoria={categoryId} />
       ) : (
         <section className="itemlist">
           <div className="container">

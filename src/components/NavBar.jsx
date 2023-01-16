@@ -11,16 +11,12 @@ const NavBar = () => {
             <h1>Bienfrio</h1>
             <p>Natural Food</p>
        </Link>
-        {/* <div className='header__search'>
-          <input placeholder='Busca un producto' type="text" />
-        </div> */}
         <nav className='header__nav'>
             <div className="header__ul">
-
-                <Link className='header__li' to={"/productos/verduras "}>Verduras </Link>
-                <Link className='header__li' to={"/productos/frutas "}>Frutas</Link>
-                <Link className='header__li' to={"/productos/helados "}>Helados</Link>
-                <Link className='header__li' to={"/productos/almacen "}>Almacen</Link>
+                <Link className='header__li' to={"/category/verduras "}>Verduras </Link>
+                <Link className='header__li' to={"/category/frutas "}>Frutas</Link>
+                <Link className='header__li' to={"/category/helados "}>Helados</Link>
+                <Link className='header__li' to={"/category/almacen "}>Almacen</Link>
                 <Link className='header__li' to={"/about "}>¿Quienes somos?  </Link>
                 <Link className='header__li' to={"/iqf "}>¿Qué es el IQF?</Link>
                 <Link className='header__li' to={"/contact "}>Contacto</Link>

@@ -330,3 +330,28 @@
 
 
 }
+
+
+.cart {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    &__container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    &__title{
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: v.$primario;
+    }
+
+}
+
+
+
+

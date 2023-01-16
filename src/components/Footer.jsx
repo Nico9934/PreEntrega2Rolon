@@ -13,10 +13,10 @@ const Footer = () => {
           </div>
 
           <nav className='footer__nav'>
-                <Link className='footer__a' to={"/productos/verduras"}>Verduras</Link>
-                <Link className='footer__a' to={"productos/frutas"}>Frutas</Link>
-                <Link className='footer__a' to={"productos/helados"}>Helados</Link>
-                <Link className='footer__a' to={"productos/almacen"}>Almacen</Link>
+                <Link className='footer__a' to={"/category/verduras"}>Verduras</Link>
+                <Link className='footer__a' to={"category/frutas"}>Frutas</Link>
+                <Link className='footer__a' to={"category/helados"}>Helados</Link>
+                <Link className='footer__a' to={"category/almacen"}>Almacen</Link>
                 <Link className='footer__a' to={"/about"}>¿Quienes somos?</Link> 
                 <Link className='footer__a' to={"/iqf"}>¿Qué es el IQF?</Link>
                 <Link className='footer__a' to={"/contact"}>Contacto</Link>
