@@ -1,0 +1,144 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.cart {
+  width: 100%;
+//   height: 80vh;
+
+  &__container {
+    display: block;
+  }
+  &__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: v.$primario;
+    margin-top: v.$separacion;
+    text-align: center;
+    
+  }
+}
+
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: v.$secundario;
+  margin-top: 0px;
+  justify-content: center;
+
+  &__product {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-content: center;
+    gap: 1rem;
+    border-bottom: solid 1px v.$grisClaro;
+    
+    // &:first-child {
+    //     border: solid 1px v.$secundario;
+    //     border-top: solid 1px v.$secundario;
+    // }
+  }
+  &__img {
+    grid-column: 1 / 2;
+    width: 2.5rem;    
+    height: 2.5rem;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include m.tablet {
+        width: 5rem;
+        height: 5rem;
+    }
+  }
+
+  &__title {
+    margin: auto;
+  }
+  &__price {
+    margin: auto;
+    
+  }
+  &__count {
+    margin: auto;
+  }
+  &__subtotal {
+    margin: auto;
+  }
+  &__remove {
+    background-color: rgb(233, 92, 92);
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    color: v.$blanco;
+    display: flex;
+    font-size: .5rem;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    @include m.tablet {
+      font-weight: 900;
+      width: 2rem;
+      height: 2rem;  
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(171, 34, 34);
+        transition: all .2s ease;
+    }
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    border-bottom: 1px solid v.$grisClaro;
+    justify-content: space-around;
+
+    .head__title{
+        font-weight: 900;
+        font-size: .8rem;
+
+        @include m.tablet {
+          font-size: 1rem;
+        }
+    }
+    }
+
+    &__total {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        align-content: center;
+        height: 3rem;
+        margin-top: 20%;
+        p {
+          text-align: center;
+          grid-column: 4 / 6;
+          grid-row: 1/2;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+        
+        button {
+          grid-column: 1/3;
+          text-align: center;
+          background-color: #43c7bb;
+          padding: 0.5rem 0.8rem;
+          border-radius: 1rem;
+          border: none;
+          color: #F3EFF5;
+          text-decoration: none;
+          margin: auto 0;
+
+          &:hover {
+            cursor: pointer;
+            background-color: v.$terciario;
+            transition: all .2s ease-in;
+          }
+        }
+    }
+}
+
