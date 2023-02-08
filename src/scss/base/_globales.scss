@@ -16,12 +16,19 @@ body {
     font-size: .8rem;
    
 }
+main {
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 
 #root {
     display: flex;
-    height: 100vh;
-    flex-direction: column;
+    min-height: 100vh;
     justify-content: space-between;
+    flex-direction: column;
 }
 .container {
     width: 95%;

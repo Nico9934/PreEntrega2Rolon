@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <section className='footer'>
+    <footer className='footer'>
       <div className="container">
         <footer className='footer__container'>
           <div className="footer__redes">
@@ -28,7 +28,7 @@ const Footer = () => {
         </footer>
       </div>
 
-    </section>
+    </footer>
   )
 }
 

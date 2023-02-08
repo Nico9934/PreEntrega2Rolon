@@ -96,6 +96,10 @@
         list-style: none;
         padding: .2rem .5rem;
         margin-top: .5rem;
+        transition: .05s ease all;
+        &:hover {
+            scale: 1.03;
+        }
     }
     a {
         text-decoration: none;
@@ -105,7 +109,7 @@
                 color: v.$grisClaro;
                 cursor: pointer;
                 transition: all .2s;
-                // font-size: 1.3rem;
+
             }
 
             

@@ -1,41 +1,99 @@
-import React from "react";
+import { addDoc, collection, doc, getDoc, serverTimestamp } from "firebase/firestore";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { db } from "../firebase";
 import { useCarrito } from "./CarritoProvider";
-import CartListItem from "./CartListItem";
+import CartCheckOut from "./CartCheckOut";
+import CartForm from "./CartForm";
+import CartList from "./CartList";
+import Spinner from "./Spinner";
+
+
 
 const Cart = () => {
+  const {precioTotal, cartItems, setCartItems, setProductosWidget, setPrecioTotal} = useCarrito();
+  const [steps, setSteps] = useState(1);
+  const [usuario, setUsuario] = useState({
+    nombre: "",
+    mail: "",
+    calle: "",
+    altura: "",
+    medio: "efectivo",
+    tarjeta: ""
+  });
+  const [compraFinal, setCompraFinal] = useState({})
+  const [idCompra, setIdCompra] = useState("")
 
-  const {cartItems,resetCart, precioTotal} = useCarrito()
+  const handleSubmit = () => {
+    const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+    if (Object.values(usuario).includes("")) {
+      toast.warn("Todos los campos son obligatorios");
+    } 
+    else if (!emailRegex.test(usuario.mail)) {
+      toast.error('Debes ingresar un mail correcto')
+    }
+     else {
+      saveData();
+      setSteps(steps + 1);
+    }
+  };
+
+// Funcion para guardar data en la base de datos
+  const saveData = () => {
+    // Todo el objeto que se va a guardar en la base 
+    const orden = { ...usuario, pedido: cartItems, fecha: serverTimestamp(), total: precioTotal };
+
+    // Pedido a fireStore collection
+    const ventasCollection = collection(db, "ventas");
+    const pedido = addDoc(ventasCollection, orden);
+  
+    // Resolucion de la promesa, venta guardada
+      pedido
+      .then((resultado) => {
+          toast.success("Venta guardada");
+          // Guardar el id de la compra en una variable para luego pasar al checkout
+          setIdCompra(resultado.id) 
+         
+        
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
+      
+    setCompraFinal(orden)  
+    setCartItems([])
+    setProductosWidget(0)
+    setUsuario({})
+    setPrecioTotal(0)
+  };
+  
 
   return (
     <div className="cart">
       <div className="container">
-        <h3 className="cart__title">Carrito de compras</h3>
-        <div className="cart__container">
-          <div className="table">
-            <div className="table__head">
-                <div className="head__title"></div>
-                <p className="head__title">Producto</p>
-                <p className="head__title">Precio</p>
-                <p className="head__title">Cantidad</p>
-                <p className="head__title">Subtotal</p>
-                <p className="head__title"></p>
-            </div>
-
-            {cartItems.map( product => {
-              return <CartListItem
-                key={product.id}
-                product={product}
-              />
-            })}
+        <h3 className="cart__title">
+            {steps === 1 && "Carrito de compras"}
+            {steps === 2 && "Completa tus datos"}
+            {steps === 3 && idCompra != "" && "Tu compra"}
+          </h3>
       
-            <div className="table__total">
-              <p>
-                Total: <span>${precioTotal}</span>
-              </p>
-              <button onClick={resetCart}>Limpiar Carrito</button>
-            </div>
-          </div>
 
+        <div className="cart__container">
+          {steps === 1 && <CartList steps={steps} setSteps={setSteps} />}
+          {steps === 2 && (
+            <CartForm
+              steps={steps}
+              setSteps={setSteps}
+              usuario={usuario}
+              setUsuario={setUsuario}
+              handleSubmit={handleSubmit}
+            />
+          )}
+          {/* Si el idCompra esta vacio, entonces carga... hasta que */}
+          {steps === 3 && idCompra === "" && <Spinner />}
+          {steps === 3 && idCompra != "" && <CartCheckOut idCompra={idCompra}  compraFinal={compraFinal} steps={steps} setSteps={setSteps} />}
         </div>
       </div>
     </div>

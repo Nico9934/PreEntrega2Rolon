@@ -10,8 +10,7 @@ const Item = ({ producto }) => {
 
   const {addProduct} = useCarrito()
 
-  const [stockDisponible, setStockDisponible] = useState(stock)
-  const [cantidad, setCantidad] = useState(1)
+  // const [cantidad, setCantidad] = useState(1)
 
 
   return (
@@ -25,35 +24,14 @@ const Item = ({ producto }) => {
           <h3 className="card__title">
             {name} <span>{kg}kg</span>{" "}
           </h3>
-          <p className="card__description">{description}</p>
+          <p className="card__description"> <span className="card__span">100% Natural,</span> sin agregados ni conservantes</p>
         </div>
         <div className="card__precios"><h3>${price}</h3></div>
 
-        <div className="card__buttons">
-          <ItemCount
-            cantidad={cantidad}
-            setCantidad={setCantidad}
-            stockDisponible={stockDisponible}
-          ></ItemCount>
-          {
-            stock === 0 
-              ? 
-              <button 
-                disabled
-                className="card__button__disabled"> 
-                Agregar
-              </button>
-              :
-              <button 
-                className="card__button"
-                onClick={ () => addProduct({...producto, cantidad})}>
-                Agregar
-              </button>
-          }
-          
-          
+              {/* Aqui podría estar, o estaba el ItemCount con todas las funcionalidades */}
+           
           <Link className="card__button" to={`/item/${id}`}>Ver mas</Link>
-        </div>
+        
       </div>
     </div>
   );

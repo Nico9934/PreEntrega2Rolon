@@ -3,25 +3,34 @@ import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "./Spinner";
+import { db } from "../firebase";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(false);
   const [producto, setProducto] = useState({});
-  const { id } = useParams();
-  const numId = Number(id)
+  const { id } = useParams(); 
 
-  useEffect(() => {
-    const url = "https://raw.githubusercontent.com/Nico9934/PreEntrega2Rolon/master/public/data.json";
+
+  useEffect( ( ) => {
+    setCargando(false)
+    const productosCollection = collection(db, "productos")
+    const referencia = doc(productosCollection, id)
+    const pedido = getDoc(referencia)
     
+    pedido
+      .then (res => {
         setCargando(false)
-          
-        fetch(url)
-              .then((respuesta) => respuesta.json())
-              .then((resultado) => setProducto(resultado.find((seleccionado) => seleccionado.id === numId)))
-              .catch((error) => console.log(error));
-
+        setProducto({...res.data(), id : res.id});
         setCargando(true)
-    }, [numId]);
+      })
+      .catch( (error) => {
+        console.log(error)
+      })
+    setCargando(true)
+
+  }, [id])
+
 
   return (
     <>

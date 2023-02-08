@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import CarritoProvider from "./components/CarritoProvider";
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
@@ -9,6 +10,8 @@ import NavBar from "./components/NavBar";
 import "./scss/app.scss";
 
 function App() {
+ 
+
   return (
     <CarritoProvider>
       <BrowserRouter>
@@ -16,6 +19,7 @@ function App() {
         <MainRoutes />
         <Footer />
       </BrowserRouter>
+      <ToastContainer />
     </CarritoProvider>
   );
 }

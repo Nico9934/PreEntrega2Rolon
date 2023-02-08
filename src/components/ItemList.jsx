@@ -9,12 +9,12 @@ export const ItemList = ({ productos, categoria }) => {
         <div className="container">
 
           <h2 className="itemlist__title">
-            {!categoria ? "Nuestros productos" : categoria}
+            {categoria ? categoria : "Nuestros productos"}
           </h2>
           <div className="itemlist__container">
             {productos.map((producto) => (
               <Item 
-                key={Math.random()*100} 
+                key={producto.id} 
                 producto={producto} />
             ))}
           </div>

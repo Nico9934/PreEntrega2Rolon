@@ -5,7 +5,7 @@ import CartWidget from './CartWidget'
 
 const NavBar = () => {
 
-
+  const raton = 5
 
   return (
     <header className='header'>
