@@ -34,6 +34,7 @@ npm run dev
 ## Sobre El proyecto
 Mi nombre es Nicolás Rolón, y este es el proyecto final realizado para el curso de desarrollo web de React, en la academia CoderHouse. Tiene incoporado la lógica completa de un e-commerce, con su carrito de compras, detalles de tarjetas, links hacia las distintas redes sociales y guardado de compras en una base de datos. 
 
+
 ##  Tecnologías
 
 El proyecto está creado con Vite, y utiliza la aplicación FireStore de Firebase como base de datos para el guardado tanto de los productos, como de las compras hechas por los clientes. 
@@ -44,15 +45,11 @@ Se utilizaron hooks como useEffect, useState, y useContext para generar un ambie
 
 
 ## Screenshots 
-https://i.ibb.co/VpCLm1D/1.png
-https://i.ibb.co/LdMLLJF/2.png
-https://i.ibb.co/PhwtDm4/3.png
-https://i.ibb.co/k4FZjKC/4.png
-https://i.ibb.co/s502xGx/5.png
-https://ibb.co/KxYMMLP
-https://ibb.co/MVM9B2p
-https://ibb.co/9bjP6n5
-https://ibb.co/4s67vGv
+![screenshot](https://i.ibb.co/VpCLm1D/1.png)
+![screenshot](https://i.ibb.co/LdMLLJF/2.png)
+![screenshot](https://i.ibb.co/PhwtDm4/3.png)
+![screenshot](https://i.ibb.co/k4FZjKC/4.png)
+![screenshot](https://i.ibb.co/s502xGx/5.png)
 
 
 ##  Features especiales
