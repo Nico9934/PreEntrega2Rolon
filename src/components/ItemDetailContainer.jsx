@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 import Spinner from "./Spinner";
 import { db } from "../firebase";
 import { collection, doc, getDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(false);
   const [producto, setProducto] = useState({});
   const { id } = useParams(); 
-
 
   useEffect( ( ) => {
     setCargando(false)
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
         setCargando(true)
       })
       .catch( (error) => {
-        console.log(error)
+        toast.error(error)
       })
     setCargando(true)
 

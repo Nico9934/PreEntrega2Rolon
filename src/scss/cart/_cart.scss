@@ -286,7 +286,8 @@
   }
   &__productos{
       display: flex;
-      height: auto;
+      flex-direction: column;
+      
     }
     &__producto{
       width: 100%;

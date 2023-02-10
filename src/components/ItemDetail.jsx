@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 import { useCarrito } from "./CarritoProvider";
 import Cart from "./Cart";
 import ItemCount from "./ItemCount";
-import Recipe from "./Recipe";
 
 
 
 const ItemDetail = ({ producto }) => {
-  const { name, description, price, id, kg, img, stock } = producto;
+  const { name, description, img, stock } = producto;
   const [cantidad, setCantidad] = useState(1);
 
   const { addProduct } = useCarrito();

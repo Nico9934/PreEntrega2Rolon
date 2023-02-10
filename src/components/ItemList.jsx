@@ -7,7 +7,6 @@ export const ItemList = ({ productos, categoria }) => {
     <>
       <section className="itemlist" id="vegetales">
         <div className="container">
-
           <h2 className="itemlist__title">
             {categoria ? categoria : "Nuestros productos"}
           </h2>

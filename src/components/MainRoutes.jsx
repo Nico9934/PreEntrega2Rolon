@@ -6,8 +6,6 @@ import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
 
-
-
 const MainRoutes = () => {
   return (
     <main>
@@ -20,7 +18,6 @@ const MainRoutes = () => {
             <Route path='/contact' element={<About/>} />
             <Route path='/cart' element={<Cart/>} />
         </Routes>
-
 
     </main>
   )

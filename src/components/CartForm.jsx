@@ -1,12 +1,9 @@
 import React from "react";
-import { useState } from "react";
-import { toast } from "react-toastify";
 import { useCarrito } from "./CarritoProvider";
-import CartListItem from "./CartListItem";
 
 const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
   
-  const { cartItems, precioTotal } = useCarrito();
+  const { precioTotal } = useCarrito();
 
  
 

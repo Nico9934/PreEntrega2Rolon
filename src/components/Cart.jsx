@@ -1,5 +1,4 @@
-import { addDoc, collection, doc, getDoc, serverTimestamp } from "firebase/firestore";
-import React, { useEffect } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { db } from "../firebase";
@@ -40,26 +39,19 @@ const Cart = () => {
     }
   };
 
-// Funcion para guardar data en la base de datos
   const saveData = () => {
-    // Todo el objeto que se va a guardar en la base 
     const orden = { ...usuario, pedido: cartItems, fecha: serverTimestamp(), total: precioTotal };
 
-    // Pedido a fireStore collection
     const ventasCollection = collection(db, "ventas");
     const pedido = addDoc(ventasCollection, orden);
   
-    // Resolucion de la promesa, venta guardada
-      pedido
+    pedido
       .then((resultado) => {
           toast.success("Venta guardada");
-          // Guardar el id de la compra en una variable para luego pasar al checkout
           setIdCompra(resultado.id) 
-         
-        
       })
       .catch((error) => {
-        toast.error(error);
+          toast.error(error);
       });
       
     setCompraFinal(orden)  

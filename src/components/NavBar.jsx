@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useCarrito } from "./CarritoProvider";
 import CartWidget from './CartWidget'
 
 const NavBar = () => {
-
-  const raton = 5
 
   return (
     <header className='header'>

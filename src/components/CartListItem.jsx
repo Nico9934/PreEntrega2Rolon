@@ -1,11 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import { useCarrito } from "./CarritoProvider";
 
 
 const CartListItem = ({product}) => {
 
-  const {name, price, kg, categoria, img, stock, id, cantidad } = product
+  const {name, price, img, cantidad } = product
 
   const {removeProduct} = useCarrito()
 

@@ -12,9 +12,6 @@ const CartList = ({setSteps, steps}) => {
 
     cartItems.length === 0 ? toast.warn('Agrega algo al carrito') : null
 
-    const finalizarCompra = () => {
-      setSteps(2)
-    }
 
   return (
     <div className="table">

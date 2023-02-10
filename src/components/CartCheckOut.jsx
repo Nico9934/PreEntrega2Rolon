@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCarrito } from "./CarritoProvider";
 import CheckOutList from "./CheckOutList";
 
 
 const CartCheckOut = ({ compraFinal, idCompra }) => {
   
  
-  const { nombre, mail, calle, altura, medio, tarjeta, pedido, total } = compraFinal;
+  const { nombre, mail, calle, altura, medio, pedido, total } = compraFinal;
 
   return (
     <div className="checkout">
@@ -40,12 +39,15 @@ const CartCheckOut = ({ compraFinal, idCompra }) => {
                 {idCompra}
               </p>
             </div>
+
+            <div className="checkout__productos">
             {pedido.map( producto => {
               return <CheckOutList
                 key={producto.id}
                 producto={producto}
               />
             })}
+            </div>
           </div>
           <div className="checkout__total-container">
             <Link to={"/"}><p className="checkout__total">Cerrar</p></Link>

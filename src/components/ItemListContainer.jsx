@@ -13,14 +13,11 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const {categoryId} = useParams()
 
-  
-
   useEffect(() => {
     
     const productosCollection = collection(db, "productos")
     const filtro = categoryId === undefined ? query(productosCollection) : query(productosCollection, where("categoria", "==",`${categoryId}`))
     const pedidoFirestore = getDocs(filtro)
-    
 
     pedidoFirestore
       .then( respuesta => {
@@ -30,7 +27,7 @@ const ItemListContainer = () => {
         setLoad(true)
       })
        .catch( (error) => {
-          toast.error("Error")
+          toast.error(error)
         })
 
   }, [categoryId]);

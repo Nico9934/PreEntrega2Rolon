@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCarrito } from "./CarritoProvider";
 import Cart from "./Cart";
@@ -8,7 +7,6 @@ import Cart from "./Cart";
 
 const CartWidget = () => {
 
-  const [contador, setContador] = useState(0)
   const {productosWidget} = useCarrito()
 
   return (
