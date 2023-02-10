@@ -44,7 +44,11 @@ Se utilizaron hooks como useEffect, useState, y useContext para generar un ambie
 
 
 ## Screenshots 
-https://ibb.co/G3MdT6k
+https://i.ibb.co/VpCLm1D/1.png
+https://i.ibb.co/LdMLLJF/2.png
+https://i.ibb.co/PhwtDm4/3.png
+https://i.ibb.co/k4FZjKC/4.png
+https://i.ibb.co/s502xGx/5.png
 https://ibb.co/KxYMMLP
 https://ibb.co/MVM9B2p
 https://ibb.co/9bjP6n5
