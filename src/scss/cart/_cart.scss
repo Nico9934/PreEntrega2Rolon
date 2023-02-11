@@ -265,14 +265,14 @@
   &__datos {
     margin-bottom: 2rem;
     margin: auto;
-    font-size: 1.3rem;
+    font-size: .9rem;
     text-align: start;
   }
   @include m.tablet {
     font-size: 1rem;
   }
   &__datos-title{
-    text-align: center;
+    text-align: start;
     font-style: italic;
     color: v.$grisClaro;
     font-weight: 700;
@@ -321,8 +321,19 @@
   &__total-container {
     display: flex;
     justify-content: space-around;
+    margin-top: 1rem;
     a {
       text-decoration: none;
+      color: v.$blanco;
+      background-color: v.$secundario;
+      padding: .2rem .8rem;
+      border-radius: 1rem;
+    }
+
+    p {
+      width: 40%;
+      color: v.$grisClaro;
+      font-size: .8rem;
     }
   }
 }

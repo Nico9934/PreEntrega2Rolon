@@ -5,8 +5,7 @@ import CheckOutList from "./CheckOutList";
 
 const CartCheckOut = ({ compraFinal, idCompra }) => {
   
- 
-  const { nombre, mail, calle, altura, medio, pedido, total } = compraFinal;
+  const { nombre, mail, calle, altura, tarjeta, pedido, total } = compraFinal;
 
   return (
     <div className="checkout">
@@ -31,8 +30,8 @@ const CartCheckOut = ({ compraFinal, idCompra }) => {
                 {altura}
               </p>
               <p className="checkout__datos-title">
-                <span>Medio de pago: </span>
-                {medio}
+                <span>Tarjeta: </span>
+                {tarjeta}
               </p>
               <p className="checkout__datos-title">
                 <span>Tracking Number : </span>

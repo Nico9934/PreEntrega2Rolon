@@ -12,6 +12,7 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
       <div className="form__container">
         <form action="submit" className="form">
           <div className="form__field">
+            {/* Nombre */}
             <label className="form__label" htmlFor="name">
               Nombre:{" "}
             </label>
@@ -27,6 +28,24 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
               value={usuario.nombre}
             />
           </div>
+          {/* Apellido */}
+          <div className="form__field">
+            <label className="form__label" htmlFor="lastname">
+              Apellido:{" "}
+            </label>
+            <input
+              className="form__input"
+              onChange={(e) =>
+                setUsuario({ ...usuario, apellido: e.target.value })
+              }
+              placeholder="Ingresa tu apellido"
+              type="text"
+              name="lastname"
+              id="lastname"
+              value={usuario.apellido}
+            />
+          </div>
+          {/* Mail */}
           <div className="form__field">
             <label className="form__label" htmlFor="mail">
               Mail:{" "}
@@ -41,6 +60,22 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
               value={usuario.mail}
             />
           </div>
+                  {/* Repite mail */}
+          <div className="form__field">
+            <label className="form__label" htmlFor="mail2">
+              Repite tu Mail:{" "}
+            </label>
+            <input
+              className="form__input"
+              onChange={(e) => setUsuario({ ...usuario, mail2: e.target.value })}
+              placeholder="Repite tu email"
+              type="text"
+              name="mail"
+              id="mail"
+              value={usuario.mail2}
+            />
+          </div>
+            {/* Calle */}
           <div className="form__field">
             <label className="form__label" htmlFor="adress">
               Calle:{" "}
@@ -57,8 +92,9 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
               value={usuario.calle}
             />
           </div>
+          {/* Altura */}
           <div className="form__field">
-            <label className="form__label" htmlFor="adress">
+            <label className="form__label" htmlFor="adressnumber">
               Altura:{" "}
             </label>
             <input
@@ -68,31 +104,13 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
               }
               placeholder="123"
               type="text"
-              name="adress"
-              id="adress"
+              name="adressnumber"
+              id="adressnumber"
               value={usuario.altura}
             />
           </div>
-
-          <div className="form__field">
-            <label className="form__label" htmlFor="payment">
-              Método de pago:{" "}
-            </label>
-            <select
-              className="form__input"
-              name=""
-              id=""
-              onChange={e => setUsuario({ ...usuario, medio: e.target.value })}
-              value={usuario.medio}
-            >
-              <option value="efectivo">Efectivo</option>
-              <option value="credito">Tarjeta de crédito</option>
-              <option value="transferencia">Transferencia</option>
-            </select>
-          </div>
-
-          {usuario.medio == "credito" && 
-            <div className="form__field">
+           {/* Tarjeta */}
+           <div className="form__field">
               <label className="form__label" htmlFor="creditcard">
                 Numero de Tarjeta:{" "}
               </label>
@@ -108,7 +126,25 @@ const CartForm = ({ setSteps, steps, usuario, setUsuario, handleSubmit }) => {
                 value={usuario.tarjeta}
               />
             </div>
-          }
+          {/* <div className="form__field">
+            <label className="form__label" htmlFor="payment">
+              Método de pago:{" "}
+            </label>
+            <select
+              className="form__input"
+              name="payment"
+              id="payment"
+              onChange={e => setUsuario({ ...usuario, medio: e.target.value })}
+              value={usuario.medio}
+            >
+              <option value="efectivo">Efectivo</option>
+              <option value="credito">Tarjeta de crédito</option>
+              <option value="transferencia">Transferencia</option>
+            </select>
+          </div> */}
+
+         
+    
         </form>
 
         <div className="form__buttons">
