@@ -51,7 +51,8 @@ Se utilizaron hooks como useEffect, useState, y useContext para generar un ambie
 ![screenshot](https://i.ibb.co/k4FZjKC/4.png)
 ![screenshot](https://i.ibb.co/s502xGx/5.png)
 
-
+## Deploy del proyecto
+https://frolicking-salmiakki-6ebeed.netlify.app/
 ##  Features especiales
 
 - Navegación a través de los distintos productos.
