@@ -1,10 +1,10 @@
+![Descripción de la imagen](/src/Ecommerce.png)
+#                    Ecommerce Congelados ⚛️
 
-##  Congelados e-commerce 
 
+####  Project by: Nico Rolon ©️
 
-####  Project by: Nico Rolon
-
-##  Instrucciones de instalación
+## ⌨️  Instrucciones de instalación
 
 Clonar el proyecto y entrar en el directorio:
 
@@ -31,11 +31,11 @@ Iniciar el servidor local:
 npm run dev
 
 ```
-## Sobre El proyecto
+## 🔶 Sobre El proyecto 🔶
 Mi nombre es Nicolás Rolón, y este es el proyecto final realizado para el curso de desarrollo web de React, en la academia CoderHouse. Tiene incoporado la lógica completa de un e-commerce, con su carrito de compras, detalles de tarjetas, links hacia las distintas redes sociales y guardado de compras en una base de datos. 
 
 
-##  Tecnologías
+##  Tecnologías 🚶
 
 El proyecto está creado con Vite, y utiliza la aplicación FireStore de Firebase como base de datos para el guardado tanto de los productos, como de las compras hechas por los clientes. 
 Para el styling se utilizó CSS puro, metodología BEM, y se compiló con SASS permitiendo una mejor organización para todo el código. 
@@ -44,14 +44,14 @@ Para el ruteo se utilizó una librería externa llamada React-Router-Dom facilit
 Se utilizaron hooks como useEffect, useState, y useContext para generar un ambiente de trabajo más óptimo y escalable. 
 
 
-## Screenshots 
+## Screenshots 📷
 ![screenshot](https://i.ibb.co/VpCLm1D/1.png)
 ![screenshot](https://i.ibb.co/LdMLLJF/2.png)
 ![screenshot](https://i.ibb.co/PhwtDm4/3.png)
 ![screenshot](https://i.ibb.co/k4FZjKC/4.png)
 ![screenshot](https://i.ibb.co/s502xGx/5.png)
 
-## Deploy del proyecto
+## Deploy del proyecto ™️
 https://frolicking-salmiakki-6ebeed.netlify.app/
 ##  Features especiales
 
